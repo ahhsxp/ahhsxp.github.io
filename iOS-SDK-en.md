@@ -54,7 +54,6 @@ When dragging the framework into the project, select as shown below:
 
 
 
-
 #### 1.2.2 Xcode Build Settings
 
 #### 1.2.2.1 Add Permissions
