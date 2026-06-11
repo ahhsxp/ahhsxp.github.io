@@ -740,6 +740,3 @@ Answer: Ad revenue is usually shown in the dashboard the next day (delayed on ho
 
 Answer: Based on our demo build, the FunlinkSDK main package is about 0.4 MB. The actual size may vary depending on which features you import. Use the size of your integrated build as the reference.
 
-```
-
-```
