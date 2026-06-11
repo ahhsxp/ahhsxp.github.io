@@ -36,7 +36,6 @@ Developers must create an app and ad placements on the platform to obtain the co
 
 #### 1.2.1 SDK Integration
 
-```
  ##### Method 1: CocoaPods
  # FunlinkGlobal main package
   pod 'FunlinkGlobal'
