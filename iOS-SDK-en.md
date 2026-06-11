@@ -50,7 +50,8 @@ Obtain the framework library for the corresponding version and import it into yo
 
 When dragging the framework into the project, select as shown below:
 
-![image.png](https://upload-images.jianshu.io/upload_images/12555132-b197ba65dc049b98.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![image.png](http://esimapp.oss-us-west-1.aliyuncs.com/img/img_add.png)
 
 
 
