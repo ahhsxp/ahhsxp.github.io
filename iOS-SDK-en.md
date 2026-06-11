@@ -38,10 +38,9 @@ Developers must create an app and ad placements on the platform to obtain the co
 
  ##### Method 1: CocoaPods
  # FunlinkGlobal main package
- 、、、
+ ```
   pod 'FunlinkGlobal'
-  、、、
-  
+  ```
 ##### Method 2: Import framework via project settings
 Obtain the framework library for the corresponding version and import it into your project.
 
