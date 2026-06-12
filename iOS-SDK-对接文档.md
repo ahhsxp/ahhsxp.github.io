@@ -53,7 +53,9 @@
 
 拖入时请按以下方式选择：
 
-image.png
+![image.png](https://upload-images.jianshu.io/upload_images/12555132-b197ba65dc049b98.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 
 #### 1.2.2 Xcode编译选项设置
 
@@ -75,13 +77,17 @@ image.png
 
 具体操作如图：
 
-image.png
+
+![image.png](https://upload-images.jianshu.io/upload_images/12555132-8c31bfc7ec42bc36.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 - Build Settings中Other Linker Flags **增加参数-ObjC**
 
 具体操作如图：
 
-image.png
+
+![image.png](https://upload-images.jianshu.io/upload_images/12555132-c098362e75f2e0d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 - SDK中包含获取IDFA的权限,所以需要在info.plist中添加IDFA权限,如图所示:
 
@@ -89,8 +95,8 @@ image.png
 <key>NSUserTrackingUsageDescription</key>
 <string>该标识符将用于向您投放个性化广告</string>
 ```
+![image.jpg](https://upload-images.jianshu.io/upload_images/12555132-5ea3a64f792b34fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-image.jpg
 
 #### 1.2.2.2 运行环境配置
 
@@ -138,7 +144,8 @@ image.jpg
 
 具体操作如图所示：
 
-image
+![image](https://upload-images.jianshu.io/upload_images/12555132-d88d8026c9a74532.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 #### 1.2.3. 获取广告标识IDFA
 
@@ -155,7 +162,8 @@ image
 <string>该标识符将用于向您投放个性化广告。</string>
 ```
 
-image.png
+![image.png](https://upload-images.jianshu.io/upload_images/12555132-1e8e46e672c05029.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 - 英文版：
 
@@ -164,7 +172,9 @@ image.png
 <string>This identifier will be used to deliver personalized ads to you.</string>
 ```
 
-img
+
+![img](https://upload-images.jianshu.io/upload_images/12555132-36e6996efa498ce5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ##### 1.2.3.2 获取App Tracking Transparency权限
 
@@ -186,7 +196,8 @@ if (@available(iOS 14, *)) {
 
 描述说明将会显示在App Tracking Transparency授权对话框中，如下：
 
-img
+![img](https://upload-images.jianshu.io/upload_images/12555132-1a426e7cb41441c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 **注意：**
 
@@ -237,7 +248,8 @@ if ([FLGAAdSDKManager defaultManager].dataConsentSet == FLGAGDPRConsentSetUnknow
 
 展示如图：
 
-img
+![img](https://upload-images.jianshu.io/upload_images/12555132-cd510d16498234fb.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 4、初始化SDK
 
