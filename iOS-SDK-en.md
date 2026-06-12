@@ -36,23 +36,24 @@ Developers must create an app and ad placements on the platform to obtain the co
 
 #### 1.2.1 SDK Integration
 
- ##### Method 1: CocoaPods
- # FunlinkGlobal main package
- ```
+##### Method 1: CocoaPods
+
+# FunlinkGlobal main package
+
+```
   pod 'FunlinkGlobal'
-  ```
+  
+```
+
 ##### Method 2: Import framework via project settings
+
 Obtain the framework library for the corresponding version and import it into your project.
 
-  * FLGAAdSaas.xcframework 
-
+- FLGAAdSaas.xcframework
 
 When dragging the framework into the project, select as shown below:
 
-
 ![image.png](http://esimapp.oss-us-west-1.aliyuncs.com/img/img_add.png)
-
-
 
 #### 1.2.2 Xcode Build Settings
 
@@ -60,7 +61,7 @@ When dragging the framework into the project, select as shown below:
 
  **Note: Required system libraries**
 
-+ In the project's plist file, click the "+" next to Information Property List to expand it.
+- In the project's plist file, click the "+" next to Information Property List to expand it.
 
 Add **App Transport Security Settings**. Expand the left arrow, then click the "+" on the right. The **Allow Arbitrary Loads** option will be added automatically; set its value to **YES**. All SDK APIs support HTTPS, but some advertiser creatives may use non-HTTPS URLs.
 
@@ -82,8 +83,6 @@ Steps are shown below:
 
 ![image.png](https://upload-images.jianshu.io/upload_images/12555132-c098362e75f2e0d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-
 - The SDK includes IDFA access. Add the IDFA permission to `info.plist` as shown:
 
 ```objective-c
@@ -91,8 +90,7 @@ Steps are shown below:
 <string>This identifier will be used to deliver personalized ads to you.</string>
 ```
 
-![image.png](https://upload-images.jianshu.io/upload_images/12555132-5ea3a64f792b34fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![image.jpg](https://upload-images.jianshu.io/upload_images/12555132-5ea3a64f792b34fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 1.2.2.2 Runtime Environment
 
@@ -141,8 +139,7 @@ In your project, go to **TARGETS -> Build Phases -> Link Binary With Libraries**
 
 Steps are shown below:
 
-![image.png](https://upload-images.jianshu.io/upload_images/12555132-d88d8026c9a74532.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![image](https://upload-images.jianshu.io/upload_images/12555132-d88d8026c9a74532.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 1.2.3 Obtain the Advertising Identifier (IDFA)
 
@@ -159,7 +156,7 @@ Below are sample descriptions in Chinese and English. You may add either one:
 <string>该标识符将用于向您投放个性化广告。</string>
 ```
 
-![img](https://upload-images.jianshu.io/upload_images/12555132-1e8e46e672c05029.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://upload-images.jianshu.io/upload_images/12555132-1e8e46e672c05029.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - English version:
 
@@ -190,7 +187,7 @@ if (@available(iOS 14, *)) {
 
 The description will appear in the App Tracking Transparency authorization dialog, as shown below:
 
-![image.png](https://upload-images.jianshu.io/upload_images/4651038-462ef8db8e336964.png?imageMogr2/auto-orient/strip|imageView2/2/w/338/format/webp)
+![img](https://upload-images.jianshu.io/upload_images/4651038-462ef8db8e336964.png?imageMogr2/auto-orient/strip|imageView2/2/w/338/format/webp)
 
 **Notes:**
 
@@ -222,12 +219,12 @@ We recommend the following integration flow:
 - **Not in the EU**: skip to step 4
 - **In the EU**: continue to the next step
 
-1. Check whether `[FLGAAdSDKManager defaultManager].dataConsentSet` is `FLGAGDPRConsentSetUnknown`.
+2. Check whether `[FLGAAdSDKManager defaultManager].dataConsentSet` is `FLGAGDPRConsentSetUnknown`.
 
 - **If `FLGAGDPRConsentSetUnknown`** (GDPR level not set): continue to the next step
 - **If not `FLGAGDPRConsentSetUnknown`** (GDPR level already set): skip to step 4
 
-1. Call `[FLGAAdSDKManager defaultManager] presentDataConsentDialogInViewController:dismissalCallback:` (let the user set the GDPR level).
+3. Call `[FLGAAdSDKManager defaultManager] presentDataConsentDialogInViewController:dismissalCallback:` (let the user set the GDPR level).
 
 Use the following code to configure GDPR:
 
@@ -241,10 +238,9 @@ if ([FLGAAdSDKManager defaultManager].dataConsentSet == FLGAGDPRConsentSetUnknow
 
 The dialog appears as shown below:
 
-![image.png](https://upload-images.jianshu.io/upload_images/12555132-cd510d16498234fb.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![img](https://upload-images.jianshu.io/upload_images/12555132-cd510d16498234fb.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-1. Initialize the SDK
+4. Initialize the SDK
 
 **Important:**
 
@@ -254,6 +250,9 @@ If your app also shows the **App Tracking Transparency authorization dialog**, w
 
 - If the user grants authorization, show the GDPR dialog next, then enter the app.
 - If the user denies authorization, enter the app directly without showing the GDPR dialog.
+
+ATT and GDPR authorization flow
+
 ![ATT and GDPR authorization flow](https://upload-images.jianshu.io/upload_images/4651038-f5c876c3461e7bfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 1.3 SDK API Overview and Ad Integration
@@ -349,7 +348,7 @@ _manager.showAdController = self.window.rootViewController;
 
 1. Display the splash ad
 
-Before calling show, use `[self.manager getCurrentBaseEcpmInfo].isAdValid` to verify the ad is valid.
+Before calling show, confirm that you have received the load success callback (`splashAdDidLoad`), and use `[self.manager getCurrentBaseEcpmInfo].isAdValid` to verify the ad is valid. Only call the show method when the ad is valid.
 
 - Display the ad in the success callback:
 
@@ -357,10 +356,8 @@ Before calling show, use `[self.manager getCurrentBaseEcpmInfo].isAdValid` to ve
 [self.manager showSplashAdWithWindow:[UIApplication sharedApplication].keyWindow];
 ```
 
-```
 We recommend setting the wait timeout to 5 seconds and the display duration to 5 seconds.
 When the app returns to the foreground after being in the background for 5 minutes or more, we also recommend showing a splash ad.
-```
 
 #### 1.3.2 Interstitial Ads
 
@@ -421,6 +418,8 @@ self.interstitialAd.delegate = self;
 ```
 
 - Display the ad in the success callback:
+
+Before calling show, confirm that you have received the load success callback (`interstitialAdDidLoad`), and use `[self.interstitialAd getCurrentBaseEcpmInfo].isAdValid` to verify the ad is valid. Only call the show method when the ad is valid.
 
 ```
 [self.interstitialAd showInterstitialAd];
@@ -494,7 +493,8 @@ self.motivationVideo.delegate = self;
 ```
 
 - Display the ad in the success callback:
-- Before calling show, use `[self.manager getCurrentBaseEcpmInfo].isAdValid` to verify the ad is valid.
+
+Before calling show, confirm that you have received the load success callback (`rewardedVideoDidLoad`), and use `[self.motivationVideo getCurrentBaseEcpmInfo].isAdValid` to verify the ad is valid. Only call the show method when the ad is valid.
 
 ```objective-c
 [self.motivationVideo showRewardVideoAdWithController:self];
@@ -560,7 +560,7 @@ self.banner.showAdController = self;
 
 - Display the ad in the success callback:
 
-Before calling show, use `[self.manager getCurrentBaseEcpmInfo].isAdValid` to verify the ad is valid.
+Before calling show, confirm that you have received the load success callback (`bannerAdDidLoad`), and use `[self.banner getCurrentBaseEcpmInfo].isAdValid` to verify the ad is valid. Only call the show method when the ad is valid.
 
 ```
 [self.banner showBannerAdWithView:self.bannerView];
@@ -593,6 +593,7 @@ Before calling show, use `[self.manager getCurrentBaseEcpmInfo].isAdValid` to ve
 ```objective-c
 FLGANativeManager *manager = [[FLGANativeManager alloc] init];
 manager.mediaId = @"Your ad placement ID";
+manager.adCount = 1;
 manager.size = CGSizeMake(FLGA_ScreenW, 0);
 manager.showAdController = self;
 manager.delegate = self;
@@ -653,18 +654,17 @@ for (FLGAFeedAdData *adData in datas) {
 }
 ```
 
-Before calling show, use `[self.manager getCurrentBaseEcpmInfo].isAdValid` to verify the ad is valid.
+Before calling show, confirm that you have received the load success callback (`nativeAdDidLoadDatas:`), and use `[self.manager getCurrentBaseEcpmInfo].isAdValid` to verify the ad is valid. Only call the show method when the ad is valid.
 
 ### **1.4** Bidding Win and Loss Reporting
 
 Each ad type includes the following two methods. When FunlinkSDK is integrated as a bidding source, you must report them:
 
-/// **Must be called before showing the ad when the media wins the auction**
+/// **Must be reported when the media displays an ad through bidding. Call before invoking the ad show method.**
 
 /**
-
-- ======= Report second price after winning the auction =======
-- @param secondPrice Second price from the media (unit: cents)
+ ======= Report second price after winning the auction =======
+ @param secondPrice Second price from the media (unit: cents)
  */
 
 ```
@@ -739,3 +739,4 @@ Answer: Ad revenue is usually shown in the dashboard the next day (delayed on ho
 
 Answer: Based on our demo build, the FunlinkSDK main package is about 0.4 MB. The actual size may vary depending on which features you import. Use the size of your integrated build as the reference.
 
+```
